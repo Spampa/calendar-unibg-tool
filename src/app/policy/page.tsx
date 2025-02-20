@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
 
             <h2 className="font-bold text-lg">8. Contatti</h2>
             <p>
-                Per qualsiasi domanda sulla Privacy Policy, puoi contattarci a: <a href="mailto:[TUA EMAIL]">[TUA EMAIL]</a>.
+                Per qualsiasi domanda sulla Privacy Policy, puoi contattarci a: <a href="mailto:nicolo.spampa@gmail.com">nicolo.spampa@gmail.com</a>.
             </p>
         </main >
     )
