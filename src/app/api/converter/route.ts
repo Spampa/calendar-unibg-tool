@@ -22,7 +22,13 @@ export async function POST(req: Request) {
         const buffer = new Uint8Array(arrayBuffer);
 
         const uniqueFileName = `${uuidv4()}-${file.name}`;
-        const filePath = path.join("./public/uploads", uniqueFileName);
+        let filePath;
+        if(process.env.NODE_ENV === 'development'){
+            filePath = path.join("./tmp", uniqueFileName);
+        }
+        else{
+            filePath = path.join("/tmp", uniqueFileName);
+        }
         
         fs.writeFileSync(filePath, buffer);
 
