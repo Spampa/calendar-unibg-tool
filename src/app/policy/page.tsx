@@ -6,13 +6,13 @@ export default function PrivacyPolicy() {
 
             <h2 className="font-bold text-lg">1. Informazioni Raccolte</h2>
             <div>
-                <p>L'Applicazione elabora i seguenti dati:</p>
+                <p>L&apos;Applicazione elabora i seguenti dati:</p>
                 <ul>
-                    <li><strong>File Excel con gli orari scolastici</strong> fornito dall'utente.</li>
+                    <li><strong>File Excel con gli orari scolastici</strong> fornito dall&apos;utente.</li>
                     <li><strong>Dati di Google Calendar</strong> necessari per creare e aggiornare eventi.</li>
-                    <li><strong>Indirizzo email dell'utente</strong> (richiesto per l'autenticazione con Google OAuth).</li>
+                    <li><strong>Indirizzo email dell&apos;utente</strong> (richiesto per l&apos;autenticazione con Google OAuth).</li>
                 </ul>
-                <p>L'Applicazione non raccoglie né memorizza alcun dato personale sui propri server.</p>
+                <p>L&apos;Applicazione non raccoglie né memorizza alcun dato personale sui propri server.</p>
             </div>
 
             <h2 className="font-bold text-lg">2. Uso delle Informazioni</h2>
@@ -21,31 +21,31 @@ export default function PrivacyPolicy() {
                 <ul>
                     <li>Analizzare il file Excel e estrarre gli orari scolastici.</li>
                     <li>Creare o aggiornare eventi su Google Calendar in base agli orari forniti.</li>
-                    <li>Mantenere il corretto funzionamento dell'Applicazione.</li>
+                    <li>Mantenere il corretto funzionamento dell&apos;Applicazione.</li>
                 </ul>
             </div>
 
             <h2 className="font-bold text-lg">3. Condivisione dei Dati</h2>
             <p>
-                L'Applicazione <strong>non vende, condivide o trasferisce</strong> i dati degli utenti a terze parti.
-                L'accesso a Google Calendar avviene tramite le API ufficiali di Google, nel rispetto delle loro politiche di sicurezza.
+                L&apos;Applicazione <strong>non vende, condivide o trasferisce</strong> i dati degli utenti a terze parti.
+                L&apos;accesso a Google Calendar avviene tramite le API ufficiali di Google, nel rispetto delle loro politiche di sicurezza.
             </p>
 
             <h2 className="font-bold text-lg">4. Autenticazione e Sicurezza</h2>
             <p>
-                L'Applicazione utilizza Google OAuth per l'autenticazione. Gli utenti concedono solo i permessi strettamente
+                L&apos;Applicazione utilizza Google OAuth per l&apos;autenticazione. Gli utenti concedono solo i permessi strettamente
                 necessari per gestire il proprio calendario. Nessuna credenziale viene memorizzata.
             </p>
 
             <h2 className="font-bold text-lg">5. Conservazione dei Dati</h2>
             <p>
-                L'Applicazione <strong>non conserva alcun dato</strong> dopo l'elaborazione. I dati rimangono solo all'interno
-                dell'account Google Calendar dell'utente.
+                L&apos;Applicazione <strong>non conserva alcun dato</strong> dopo l&apos;elaborazione. I dati rimangono solo all&apos;interno
+                dell&apos;account Google Calendar dell&apos;utente.
             </p>
 
             <h2 className="font-bold text-lg">6. Diritti degli Utenti</h2>
             <p>
-                Gli utenti possono revocare l'accesso dell'Applicazione al proprio Google Calendar in qualsiasi momento
+                Gli utenti possono revocare l&apos;accesso dell&apos;Applicazione al proprio Google Calendar in qualsiasi momento
                 tramite <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google Account Permissions</a>.
             </p>
 
