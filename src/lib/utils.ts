@@ -4,6 +4,8 @@ import { twMerge } from "tailwind-merge"
 //types
 import { Event, Subject } from "@/types";
 
+export * from "./extraction";
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }

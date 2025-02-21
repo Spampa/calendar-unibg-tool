@@ -9,6 +9,9 @@ import { Event, Subject } from "@/types";
 
 import { getGoogleCalendarColor } from "@/lib/utils";
 
+//utils function
+import { extractDays } from "@/lib/utils";
+
 export async function POST(req: Request) {
     try {
         const formData = await req.formData();
@@ -53,37 +56,11 @@ async function getCalendar(path: string) {
 
     // Converte il foglio in JSON
     const jsonData: Record<string, unknown>[] = XLSX.utils.sheet_to_json(sheet);
+    const days: { [key: string]: string } = extractDays(jsonData);
 
-    //setup empty
-    const days: { [key: string]: string } = {};
-    const daysCode = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"];
     const calendar = <Array<Event>>[]
-
     const subjects = <Array<Subject>>[];
-
-    let emptyIndex = 1;
-    for (const d of jsonData) {
-        if (d?.__EMPTY) {
-            let i = 0;
-            for (const key in d) {
-                if (i == 0) {
-                    emptyIndex = 1;
-                }
-                else if (key.charAt(key.length - 1) !== emptyIndex.toString()) {
-                    let j = emptyIndex + 1
-                    for (j; j <= parseInt(key.charAt(key.length - 1)); j++){
-                        days[`__EMPTY_${emptyIndex}`] = daysCode[i - 1];
-                    }
-                    emptyIndex = j;
-                }
-                days[key] = daysCode[i];
-                i++;
-            }
-            days[`__EMPTY_${emptyIndex + 1}`] = daysCode[i - 1];
-            break;
-        }
-    }
-
+    
     let id = 0;
 
     for (const e of jsonData) {
