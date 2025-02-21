@@ -2,19 +2,16 @@
 
 import { Button } from "@/components/ui/button";
 import { signIn } from "next-auth/react";
-import Link from "next/link";
 
 export default function Login(){
     return(
-        <main className="flex place-content-center h-screen bg-gradient-to-r from-background via-30% via-blue-950 to-background">
-            <div className="flex flex-col gap-4 h-full place-content-center items-center text-center">
-                <h1 className="text-4xl font-bold">UNIBG Calendar Tool</h1>
-                <p>Abbiamo bisogno della tua autorizzazione Google per applicare il calendario 😊</p>
-                <Button onClick={() => signIn("google", { callbackUrl: "/" })}>Accedi Con Google</Button>
-            </div>
-
-            <div className="absolute bottom-0 w-full text-center p-3 text-sm">
-                Utilizzando UNIBG Calendar Tool confermi di avere letto l&apos;<Link href={"/policy"} className="underline">informativa sulla privacy.</Link>
+        <main className="flex place-content-center h-screen bg-background">
+            <h1 className="text-xl font-bold absolute top-0 left-0 m-6">UNIBG Calendar Tool</h1>
+            <div className="flex h-full place-content-center items-center text-center">
+                <div className=" flex flex-col gap-3">
+                    <h3 className="text-xl font-semibold">Inizia ad usare il tool</h3>
+                    <Button variant={"secondary"} onClick={() => signIn("google", { callbackUrl: "/home" })}>Accedi Con Google</Button>
+                </div>
             </div>
         </main>
     )

@@ -52,6 +52,9 @@ export default function EditTable({ calendar, subjects, setSubjects }: EditTable
             }
         });
         setStatus(true);
+        setTimeout(() => {
+            setStatus(false)
+        }, 1000);
     }
 
     function handleCheckChange(subject: Subject) {
@@ -64,16 +67,7 @@ export default function EditTable({ calendar, subjects, setSubjects }: EditTable
 
     if (calendar.length != 0) {
         return (
-            <div className=" w-full flex flex-col gap-2 place-content-center">
-                <div className="flex place-content-center">
-                    {
-                        status === false ?
-                            <Button onClick={() => applyCalendar()} className=" font-bold" variant={"secondary"}>Applica a Google Calendar!</Button>
-                            :
-                            <Button disabled className=" font-bold bg-green-500">Orario Applicato</Button>
-                    }
-
-                </div>
+            <div className=" w-full flex flex-col gap-3 place-content-center">
                 <Table>
                     <TableHeader>
                         <TableRow>
@@ -103,6 +97,15 @@ export default function EditTable({ calendar, subjects, setSubjects }: EditTable
                         ))}
                     </TableBody>
                 </Table>
+                <div className="flex place-content-center">
+                    {
+                        status === false ?
+                            <Button onClick={() => applyCalendar()} className=" font-bold" variant={"secondary"}>Applica a Google Calendar!</Button>
+                            :
+                            <Button className="font-bold bg-green-500 text-white">Orario Applicato</Button>
+                    }
+
+                </div>
             </div>
         )
     }

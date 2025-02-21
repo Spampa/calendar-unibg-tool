@@ -56,7 +56,7 @@ export default function FileUpload({ setCalendar, setSubjects }: FileUploadProps
             method: "POST",
             body: formData
         });
-       
+
         if (res.ok) {
             const data = await res.json();
             setCalendar(data?.calendar);
@@ -76,14 +76,22 @@ export default function FileUpload({ setCalendar, setSubjects }: FileUploadProps
                         <FormItem>
                             <FormLabel>File excel</FormLabel>
                             <FormControl>
-                                <Input
-                                    placeholder="File Excel"
-                                    type="file"
-                                    accept=".xlsx,.xls"
-                                    onChange={(event) =>
-                                        onChange(event.target.files && event.target.files[0])
+                                <div className="flex flex-row gap-2">
+                                    <Input
+                                        placeholder="File Excel"
+                                        type="file"
+                                        accept=".xlsx,.xls"
+                                        onChange={(event) =>
+                                            onChange(event.target.files && event.target.files[0])
+                                        }
+                                    />
+                                    {
+                                        isFileLoad === false ?
+                                            <Button type="submit" className=" font-bold text-secondary"><Calendar />Estrai dati</Button>
+                                            :
+                                            <Button disabled variant={"outline"} size={"icon"} className="font-bold text-secondary"><LoaderCircle className="animate-spin" /></Button>
                                     }
-                                />
+                                </div>
                             </FormControl>
                             <FormDescription>
                                 Carica il file excel esportato.
@@ -92,13 +100,6 @@ export default function FileUpload({ setCalendar, setSubjects }: FileUploadProps
                         </FormItem>
                     )}
                 />
-                {
-                    isFileLoad === false ? 
-                        <Button type="submit" className=" font-bold text-secondary"><Calendar />Estrai dati</Button>
-                        :
-                        <Button disabled variant={"outline"} size={"icon"} className="font-bold text-secondary"><LoaderCircle className="animate-spin" /></Button>
-                }
-                
             </form>
         </Form>
     )
