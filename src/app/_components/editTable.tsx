@@ -24,8 +24,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox"
 
-import { isIncluded } from "@/lib/utils";
-
 export default function EditTable({ calendar, subjects, setSubjects }: EditTableProps) {
     const { data: session } = useSession();
     const [status, setStatus] = useState<boolean>(false);
@@ -35,26 +33,27 @@ export default function EditTable({ calendar, subjects, setSubjects }: EditTable
     }, [calendar]);
 
     async function applyCalendar() {
-        calendar.forEach(async (e: Event) => {
-            if (isIncluded(e, subjects)) {
-                const res = await fetch("https://www.googleapis.com/calendar/v3/calendars/primary/events", {
-                    method: "POST",
-                    headers: {
-                        Authorization: `Bearer ${session?.accessToken}`,
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(e)
-                });
+        try{
+            fetch("/api/calendar/google", {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${session?.accessToken}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    calendar,
+                    subjects
+                })
+            });
 
-                if (!res.ok) {
-                    console.error("Errore durante l'aggiunta dell'evento:", e);
-                }
-            }
-        });
-        setStatus(true);
-        setTimeout(() => {
-            setStatus(false)
-        }, 1000);
+            setStatus(true);
+            setTimeout(() => {
+                setStatus(false)
+            }, 1000);
+        }
+        catch(error){
+            console.error(error);
+        }
     }
 
     function handleCheckChange(subject: Subject) {

@@ -1,2 +1,2 @@
 export * from "./subject";
-export * from "./event";
+export * from "./googleCalendar";

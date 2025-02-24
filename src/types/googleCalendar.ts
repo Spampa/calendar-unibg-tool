@@ -11,3 +11,12 @@ export interface Event {
     colorId: string,
     recurrence: Array<string>
 }
+
+export interface Calendar {
+    kind: string,
+    etag: string,
+    id: string,
+    summary: string
+    description: string,
+    timeZone: string
+}
