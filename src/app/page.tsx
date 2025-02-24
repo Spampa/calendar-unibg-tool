@@ -25,8 +25,8 @@ export default function Landing() {
                     </div>
                     <div className="border border-b-1"></div>
                     <div className="flex flex-col items-center w-full gap-2">
-                        <p>UNIBG Calendar Calendar Tool è uno strumento online dedicato agli studenti e al personale dell'Università di Bergamo, progettato per semplificare la gestione del calendario accademico. Permette di convertire file Excel contenenti orari delle lezioni ed eventi universitari in un formato compatibile con Google Calendar, facilitando l'importazione e la sincronizzazione.</p>
-                        <p>Per offrire un'esperienza personalizzata e consentire l'importazione diretta su Google Calendar, richiediamo l'autenticazione tramite Google OAuth. L'accesso ci permette esclusivamente di creare e gestire eventi nel tuo calendario, senza raccogliere o condividere dati personali.</p>
+                        <p>UNIBG Calendar Calendar Tool è uno strumento online dedicato agli studenti e al personale dell&apos;Università di Bergamo, progettato per semplificare la gestione del calendario accademico. Permette di convertire file Excel contenenti orari delle lezioni ed eventi universitari in un formato compatibile con Google Calendar, facilitando l&apos;importazione e la sincronizzazione.</p>
+                        <p>Per offrire un&apos;esperienza personalizzata e consentire l&apos;importazione diretta su Google Calendar, richiediamo l&apos;autenticazione tramite Google OAuth. L&apos;accesso ci permette esclusivamente di creare e gestire eventi nel tuo calendario, senza raccogliere o condividere dati personali.</p>
                     </div>
                 </div>
             </main>
