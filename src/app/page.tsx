@@ -14,7 +14,7 @@ export default function Landing() {
     }
     else {
         return (
-            <main className="flex flex-col items-center gap-14 h-screen p-5 md:pt-32 mx-auto bg-background">
+            <main className="flex flex-col items-center gap-14 h-screen p-5 pt-24 md:pt-32 mx-auto bg-background">
                 <div className="flex flex-col gap-14  md:w-2/3 xl:w-1/3">
                     <div className="flex flex-col gap-8 items-center">
                         <h1 className="text-4xl font-bold text-center">Introducing UNIBG Calendar Tool</h1>
